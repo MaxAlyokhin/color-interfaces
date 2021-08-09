@@ -1,0 +1,130 @@
+@font-face { 
+  font-family: "robotomonomedium";
+  src: url(../fonts/RobotoMono-Medium.eot?) format("eot"), /* IE8+, знак ? позволяет обойти баг в обработчике значения src */
+       url(../fonts/RobotoMono-Medium.woff) format("woff"), /* все современные браузеры, IE9+ */
+       url(../fonts/RobotoMono-Medium.ttf) format("truetype"); /* все современные браузеры */
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 25px 25px 0 25px;
+  transition: all 1000ms;
+  font-family: robotomonomedium;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(0, 0, 0);
+}
+
+#entrypoint {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 25px 0px 25px 0;
+  position: fixed;
+  top: 25px;
+  width: calc(100% - 50px);
+  border: 1px solid;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.container {
+  position: relative;
+  text-align: justify;
+}
+
+.greetings {
+  position: absolute;
+  opacity: 1;
+  transition: all 1000ms;
+  width: 100%;
+  /* margin-bottom: 50px; */
+  z-index: 1;
+}
+
+
+.orientation {
+  position: absolute;
+  opacity: 0;
+  transition: all 1000ms;
+  /* margin-bottom: 50px; */
+}
+
+.time {
+  position: absolute;
+  opacity: 0;
+  transition: all 1000ms;
+  margin-bottom: 50px;
+}
+
+.motion {
+  position: absolute;
+  opacity: 0;
+  transition: all 1000ms;
+  color: #ffffff;
+  /* margin-bottom: 50px; */
+  /* filter: invert(1); */
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  height: 50px;
+  align-items: center;
+  z-index: 2;
+}
+
+.text {
+  /* bottom:-60px; */
+  transition: all 1000ms;
+}
+
+.white {
+  color: #ffffff;
+}
+
+a {
+  color: rgb(0, 0, 0);
+}
+.motion a {
+  color: #ffffff;
+}
+
+.en {
+  display: none;
+  opacity: 0;
+}
+
+.cover {
+  display: none;
+}
+
+.desktop body .cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: calc(100% - 25px);
+  height: calc(100% - 25px);
+  background-color: white;
+}
+
+.desktop body .container {
+  display: none;
+}
+
+.padding {
+  padding: 15px;
+}
+
+.padding-bottom {
+  padding: 25px;
+}
