@@ -7,14 +7,20 @@ import { exitFromMotion } from '/scripts/motion.js'
 import { resolution } from '/scripts/resolution.js'
 
 function main() {
-  let clickForLanguage = 1
+  let clickForLanguage = null
+
+  if (navigator.language.slice(0, 2) == 'ru') {
+    clickForLanguage = 0
+  } else {
+    clickForLanguage = 1
+  }
+
   let allRu = document.querySelectorAll('.ru')
   let allEn = document.querySelectorAll('.en')
 
   document.querySelector('.resolution').innerHTML = resolution()
 
-  // Управление языком
-  document.querySelector('.language').addEventListener('click', function () {
+  function languageChange() {
     if (clickForLanguage) {
       for (let i = 1; i < allRu.length; i++) {
         allRu[0].style.opacity = 0
@@ -48,6 +54,13 @@ function main() {
       }
       clickForLanguage = 1
     }
+  }
+
+  languageChange()
+
+  // Управление языком
+  document.querySelector('.language').addEventListener('click', function () {
+    languageChange()
   })
 
   // Управление двойным тапом

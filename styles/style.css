@@ -1,8 +1,6 @@
-@font-face { 
-  font-family: "robotomonomedium";
-  src: url(../fonts/RobotoMono-Medium.eot?) format("eot"), /* IE8+, знак ? позволяет обойти баг в обработчике значения src */
-       url(../fonts/RobotoMono-Medium.woff) format("woff"), /* все современные браузеры, IE9+ */
-       url(../fonts/RobotoMono-Medium.ttf) format("truetype"); /* все современные браузеры */
+@font-face {
+  font-family: 'robotomonomedium';
+  src: url(../fonts/RobotoMono-Medium.eot?) format('eot'), /* IE8+, знак ? позволяет обойти баг в обработчике значения src */ url(../fonts/RobotoMono-Medium.woff) format('woff'), /* все современные браузеры, IE9+ */ url(../fonts/RobotoMono-Medium.ttf) format('truetype'); /* все современные браузеры */
 }
 
 html {
@@ -43,7 +41,6 @@ body {
   /* margin-bottom: 50px; */
   z-index: 1;
 }
-
 
 .orientation {
   position: absolute;
@@ -99,6 +96,10 @@ a {
 }
 
 .en {
+  display: none;
+  opacity: 0;
+}
+.ru {
   display: none;
   opacity: 0;
 }
