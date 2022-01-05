@@ -1,18 +1,19 @@
-import { orientationInterface } from '/scripts/orientation.js'
-import { exitFromOrientation } from '/scripts/orientation.js'
-import { timeInterface } from '/scripts/time.js'
-import { exitFromTime } from '/scripts/time.js'
-import { motionInterface } from '/scripts/motion.js'
-import { exitFromMotion } from '/scripts/motion.js'
+import { orientationInterface, exitFromOrientation } from '/scripts/orientation.js'
+import { timeInterface, exitFromTime } from '/scripts/time.js'
+import { motionInterface, exitFromMotion } from '/scripts/motion.js'
 import { resolution } from '/scripts/resolution.js'
 
 function main() {
   let clickForLanguage = null
 
-  if (navigator.language.slice(0, 2) == 'ru') {
-    clickForLanguage = 0
+  const langMarkerFromURL = document.location.search.slice(1)
+
+  if (langMarkerFromURL === 'ru') {
+    clickForLanguage = false
+  } else if (langMarkerFromURL === 'en') {
+    clickForLanguage = true
   } else {
-    clickForLanguage = 1
+    clickForLanguage = 'ru' == navigator.language.slice(0, 2) ? false : true
   }
 
   let allRu = document.querySelectorAll('.ru')
